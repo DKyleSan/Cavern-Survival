@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=3 uid="uid://bymdbk5ock311"]
+
+[ext_resource type="Script" path="res://Scenes/ghost.gd" id="1_mbr1i"]
+[ext_resource type="Texture2D" uid="uid://bedgnegcd0053" path="res://Assets/Enemies/ghost/spr_ghost_death2.png" id="3_x0p28"]
+[ext_resource type="Texture2D" uid="uid://ofw6to7nxjbh" path="res://Assets/Enemies/ghost/spr_ghost_death3.png" id="4_vedd7"]
+[ext_resource type="Texture2D" uid="uid://bmnrjs8hni3gr" path="res://Assets/Enemies/ghost/spr_ghost_death4.png" id="5_2eto2"]
+[ext_resource type="Texture2D" uid="uid://cop1hc8lpeyag" path="res://Assets/Enemies/ghost/spr_ghost_death5.png" id="6_olpcu"]
+[ext_resource type="Texture2D" uid="uid://dw4p7fqf1gjc5" path="res://Assets/Enemies/ghost/spr_ghost_idle.png" id="7_ch6kq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k6bk3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_x0p28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vedd7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2eto2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_olpcu")
+}],
+"loop": true,
+"name": &"Dead",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_ch6kq")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mmdpg"]
+size = Vector2(10, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lo678"]
+size = Vector2(10, 10)
+
+[node name="Ghost" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+collision_layer = 4
+script = ExtResource("1_mbr1i")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_k6bk3")
+animation = &"Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 1.5)
+shape = SubResource("RectangleShape2D_mmdpg")
+
+[node name="Entrance Timer" type="Timer" parent="."]
+wait_time = 1.25
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_lo678")
+
+[connection signal="timeout" from="Entrance Timer" to="." method="_on_entrance_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

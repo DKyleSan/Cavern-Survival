@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=3 uid="uid://claagx6lvqbfa"]
+
+[ext_resource type="Texture2D" uid="uid://bd0rr6a3ppkt5" path="res://Assets/Items/Heart.png" id="1_3a3ub"]
+[ext_resource type="Texture2D" uid="uid://dw4p7fqf1gjc5" path="res://Assets/Enemies/ghost/spr_ghost_idle.png" id="2_76t1t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pcuwa"]
+border_width_top = 2
+border_color = Color(0, 0, 0, 1)
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1025.0
+offset_bottom = 48.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pcuwa")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(37, 24)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_3a3ub")
+
+[node name="LivesLabel" type="Label" parent="."]
+offset_left = 66.0
+offset_top = 1.0
+offset_right = 110.0
+offset_bottom = 46.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "x 3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WaveLabel" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -58.5
+offset_right = 58.5
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "WAVE: 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(930, 25)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_76t1t")
+
+[node name="EnemiesLabel" type="Label" parent="."]
+offset_left = 960.0
+offset_top = 1.0
+offset_right = 1021.0
+offset_bottom = 46.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "x 10"
+horizontal_alignment = 1
+vertical_alignment = 1

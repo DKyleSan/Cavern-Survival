@@ -1,0 +1,44 @@
+[gd_scene load_steps=9 format=3 uid="uid://dl55n82ny5tql"]
+
+[ext_resource type="PackedScene" uid="uid://dljfur6uv5kyb" path="res://Scenes/World.tscn" id="1_ex101"]
+[ext_resource type="Script" path="res://Scenes/main.gd" id="1_nympw"]
+[ext_resource type="PackedScene" uid="uid://bgjy77h6w46p4" path="res://Scenes/player.tscn" id="2_w7eky"]
+[ext_resource type="PackedScene" uid="uid://dfopc2rm6vyq" path="res://Scenes/enemy_spawner.tscn" id="3_ue5yi"]
+[ext_resource type="Script" path="res://Scenes/Bullet Manager.gd" id="4_dlidw"]
+[ext_resource type="PackedScene" uid="uid://ooirxwmtyrro" path="res://Scenes/bullet.tscn" id="5_1oscl"]
+[ext_resource type="PackedScene" uid="uid://claagx6lvqbfa" path="res://Scenes/hud.tscn" id="7_t1ax2"]
+[ext_resource type="PackedScene" uid="uid://db12ik5cctrga" path="res://Scenes/game_over.tscn" id="8_6pfcw"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_nympw")
+
+[node name="World" parent="." instance=ExtResource("1_ex101")]
+
+[node name="Player" parent="." instance=ExtResource("2_w7eky")]
+
+[node name="Bullet Manager" type="Node2D" parent="."]
+script = ExtResource("4_dlidw")
+bullet_scene = ExtResource("5_1oscl")
+
+[node name="EnemySpawner" parent="." instance=ExtResource("3_ue5yi")]
+
+[node name="RestartTimer" type="Timer" parent="."]
+process_mode = 2
+wait_time = 0.5
+one_shot = true
+
+[node name="WaveOverTimer" type="Timer" parent="."]
+process_mode = 2
+one_shot = true
+
+[node name="HUD" parent="." instance=ExtResource("7_t1ax2")]
+offset = Vector2(0, 640)
+transform = Transform2D(1, 0, 0, 1, 0, 640)
+
+[node name="Game Over" parent="." instance=ExtResource("8_6pfcw")]
+process_mode = 2
+
+[connection signal="shoot" from="Player" to="Bullet Manager" method="_on_player_shoot"]
+[connection signal="hit_p" from="EnemySpawner" to="." method="_on_enemy_spawner_hit_p"]
+[connection signal="timeout" from="RestartTimer" to="." method="_on_restart_timer_timeout"]
+[connection signal="timeout" from="WaveOverTimer" to="." method="_on_wave_over_timer_timeout"]

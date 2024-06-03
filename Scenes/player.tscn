@@ -1,0 +1,204 @@
+[gd_scene load_steps=29 format=3 uid="uid://bgjy77h6w46p4"]
+
+[ext_resource type="Texture2D" uid="uid://b54som3dgfb2n" path="res://Assets/Player/East/Civilian1_Idle(weapon1)_E.png" id="1_0mq32"]
+[ext_resource type="Script" path="res://Scenes/player.gd" id="1_lsfdk"]
+[ext_resource type="Texture2D" uid="uid://ckmg77k8243hg" path="res://Assets/Player/East/Civilian1_Move(weapon1)_E2.png" id="2_jy2ya"]
+[ext_resource type="Texture2D" uid="uid://dbo8tmsrhjs1" path="res://Assets/Player/East/Civilian1_Move(weapon1)_E.png" id="3_l0nur"]
+[ext_resource type="Texture2D" uid="uid://db1tnj7m4kom2" path="res://Assets/Player/North East/Civilian1_Idle(weapon1)_NE.png" id="5_j44rk"]
+[ext_resource type="Texture2D" uid="uid://cjrgqn6xurs8j" path="res://Assets/Player/North East/Civilian1_Move(weapon1)_NE2.png" id="6_dfk0j"]
+[ext_resource type="Texture2D" uid="uid://c7mljuvj1u5bb" path="res://Assets/Player/North East/Civilian1_Move(weapon1)_NE.png" id="7_dproy"]
+[ext_resource type="Texture2D" uid="uid://bkgimoeqy6lnj" path="res://Assets/Player/North West/Civilian1_Idle(weapon1)_NW.png" id="8_34nl6"]
+[ext_resource type="Texture2D" uid="uid://wlu105tlw60y" path="res://Assets/Player/North West/Civilian1_Move(weapon1)_NW2.png" id="9_gfvm7"]
+[ext_resource type="Texture2D" uid="uid://b81r6jppo5fou" path="res://Assets/Player/North West/Civilian1_Move(weapon1)_NW.png" id="10_x8dbw"]
+[ext_resource type="Texture2D" uid="uid://dt3kqcnf2h2jn" path="res://Assets/Player/North/Civilian1_Idle(weapon1)_N.png" id="11_nhyrn"]
+[ext_resource type="Texture2D" uid="uid://cpecim1jf2fd2" path="res://Assets/Player/North/Civilian1_Move(weapon1)_N2.png" id="12_fywrs"]
+[ext_resource type="Texture2D" uid="uid://dgvqgbw17gols" path="res://Assets/Player/North/Civilian1_Move(weapon1)_N.png" id="13_jxcam"]
+[ext_resource type="Texture2D" uid="uid://bsjnjexkskqe7" path="res://Assets/Player/South East/Civilian1_Idle(weapon1)_SE.png" id="14_mmfpa"]
+[ext_resource type="Texture2D" uid="uid://7xtw12ovlbgf" path="res://Assets/Player/South East/Civilian1_Move(weapon1)_SE2.png" id="15_scmv8"]
+[ext_resource type="Texture2D" uid="uid://eke50k1oy6ce" path="res://Assets/Player/South East/Civilian1_Move(weapon1)_SE.png" id="16_nuv0g"]
+[ext_resource type="Texture2D" uid="uid://x5sbud0d1msp" path="res://Assets/Player/South West/Civilian1_Idle(weapon1)_SW.png" id="17_3v2do"]
+[ext_resource type="Texture2D" uid="uid://bj5ystel3bu5e" path="res://Assets/Player/South West/Civilian1_Move(weapon1)_SW2.png" id="18_3yaks"]
+[ext_resource type="Texture2D" uid="uid://pax88ug2ijgv" path="res://Assets/Player/South West/Civilian1_Move(weapon1)_SW.png" id="19_nxf3w"]
+[ext_resource type="Texture2D" uid="uid://c7v68b48555pa" path="res://Assets/Player/South/Civilian1_Idle(weapon1)_S.png" id="20_v1rmq"]
+[ext_resource type="Texture2D" uid="uid://br1utss2qhwy7" path="res://Assets/Player/South/Civilian1_Move(weapon1)_S2.png" id="21_6chft"]
+[ext_resource type="Texture2D" uid="uid://cf46sgxhvjvbe" path="res://Assets/Player/South/Civilian1_Move(weapon1)_S.png" id="22_usa3d"]
+[ext_resource type="Texture2D" uid="uid://b51j0cljp0yte" path="res://Assets/Player/West/Civilian1_Idle(weapon1)_W.png" id="23_tgtm3"]
+[ext_resource type="Texture2D" uid="uid://dwa68u1m3ua4t" path="res://Assets/Player/West/Civilian1_Move(weapon1)_W2.png" id="24_wwg1e"]
+[ext_resource type="Texture2D" uid="uid://c427sqkv2y0e0" path="res://Assets/Player/West/Civilian1_Move(weapon1)_W.png" id="25_pohnw"]
+[ext_resource type="AudioStream" uid="uid://bglknjavueycx" path="res://Audio/laser-gun-shot-sound.mp3" id="26_6foho"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tjmb4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0mq32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_jy2ya")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_l0nur")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_0mq32")
+}],
+"loop": true,
+"name": &"Walk0",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_mmfpa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_scmv8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_nuv0g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_mmfpa")
+}],
+"loop": true,
+"name": &"Walk1",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_v1rmq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_6chft")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_usa3d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_v1rmq")
+}],
+"loop": true,
+"name": &"Walk2",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_3v2do")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_3yaks")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_nxf3w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_3v2do")
+}],
+"loop": true,
+"name": &"Walk3",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_tgtm3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_wwg1e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_pohnw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_tgtm3")
+}],
+"loop": true,
+"name": &"Walk4",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_34nl6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_gfvm7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_x8dbw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_34nl6")
+}],
+"loop": true,
+"name": &"Walk5",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_nhyrn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_fywrs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_jxcam")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_nhyrn")
+}],
+"loop": true,
+"name": &"Walk6",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_j44rk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dfk0j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_dproy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_j44rk")
+}],
+"loop": true,
+"name": &"Walk7",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ner3h"]
+size = Vector2(33, 25)
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 17
+script = ExtResource("1_lsfdk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_tjmb4")
+animation = &"Walk0"
+frame_progress = 0.937968
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 16.5)
+shape = SubResource("RectangleShape2D_ner3h")
+
+[node name="Shot Timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="Boost Timer" type="Timer" parent="."]
+wait_time = 6.0
+one_shot = true
+
+[node name="Fast Shot Timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[node name="Laser gun sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("26_6foho")
+volume_db = -5.0
+
+[connection signal="timeout" from="Shot Timer" to="." method="_on_shot_timer_timeout"]
+[connection signal="timeout" from="Boost Timer" to="." method="_on_boost_timer_timeout"]
+[connection signal="timeout" from="Fast Shot Timer" to="." method="_on_fast_shot_timer_timeout"]

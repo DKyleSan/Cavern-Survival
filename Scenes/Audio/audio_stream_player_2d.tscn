@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cm7y7gdh7jvn7"]
+
+[ext_resource type="AudioStream" uid="uid://b3aom2b2ty7of" path="res://Audio/8-bit-arcade-bgMusic.mp3" id="1_oo8iu"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_oo8iu")
+volume_db = -15.0
+autoplay = true
